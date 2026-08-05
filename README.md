@@ -16,8 +16,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>Operating Systems Used </h2>
 
-- Windows Server 2022
-- Windows 10 (21H2)
+- Windows Server 2022 Datacenter Azure Addition
+- Windows 11 (24H2)
 - MacOS
 
 
