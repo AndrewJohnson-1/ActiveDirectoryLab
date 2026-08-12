@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/pU5A58S.png" alt="Microsoft Active Directory Logo"/>
 </p>
 
-<h1>On-premises Active Directory Deployed in the Cloud (Azure)</h1>
+<h1>Implementing Active Directory (On-Premises) in Azure</h1>
 Practice core Windows Server administration and identity management skills by standing up a domain controller from scratch — VM provisioning, role installation, AD DS promotion, and post-deployment verification.<br />
 
 
