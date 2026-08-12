@@ -25,13 +25,7 @@ Practice core Windows Server administration and identity management skills by st
 
 <h2>Architecture</h2>
 
--[Admin Workstation] --RDP--> [Azure VM: Windows Server 2022]
-                                     |
-                              -AD DS installed
-                                     |
-                        Promoted to Domain Controller
-                                     |
-                          Forest: corp.local
+<img width="1800" height="1240" alt="azure-dc-architecture" src="https://github.com/user-attachments/assets/9ad25682-d5dd-47d3-a48d-3bda74d64812" />
 
 
 <h2>Deployment and Configuration Steps</h2>
