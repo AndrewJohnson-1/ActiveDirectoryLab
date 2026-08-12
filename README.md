@@ -3,16 +3,18 @@
 </p>
 
 <h1>On-premises Active Directory Deployed in the Cloud (Azure)</h1>
-This tutorial outlines the implementation of on-premises Active Directory within Azure Virtual Machines.<br />
+Practice core Windows Server administration and identity management skills by standing up a domain controller from scratch — VM provisioning, role installation, AD DS promotion, and post-deployment verification.<br />
 
 
 
-<h2>Environments and Technologies Used</h2>
+<h2>Tools and Technologies Used</h2>
 
-- Microsoft Azure (Virtual Machines/Compute)
-- Remote Desktop
-- Active Directory Domain Services
+- MMicrosoft Azure (Virtual Machines, Resource Groups, Network Security Groups)
+- Windows Server 2022 Datacenter
+- Active Directory Domain Services (AD DS)
 - PowerShell
+- DNS
+- Remote Desktop Protocol (RDP)
 
 <h2>Operating Systems Used </h2>
 
