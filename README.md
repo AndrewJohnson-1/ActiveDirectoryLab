@@ -3,6 +3,13 @@
 </p>
 
 <h1>Implementing Active Directory (On-Premises) in Azure</h1>
+
+<h2>Overview</h2>
+
+Practice core Windows Server administration and identity management skills by standing up a domain controller from scratch — VM provisioning, role installation, AD DS promotion, and post-deployment verification.<br />
+
+<h2>Objective</h2>
+
 Practice core Windows Server administration and identity management skills by standing up a domain controller from scratch — VM provisioning, role installation, AD DS promotion, and post-deployment verification.<br />
 
 
