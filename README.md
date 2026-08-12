@@ -23,11 +23,15 @@ Practice core Windows Server administration and identity management skills by st
 - DNS
 - Remote Desktop Protocol (RDP)
 
-<h2>Operating Systems Used </h2>
+<h2>Architecture</h2>
 
-- Windows Server 2022
-- Windows 11 (24H2)
-- MacOS
+[Admin Workstation] --RDP--> [Azure VM: Windows Server 2022]
+                                     |
+                              AD DS installed
+                                     |
+                        Promoted to Domain Controller
+                                     |
+                          Forest: corp.local
 
 
 <h2>Deployment and Configuration Steps</h2>
