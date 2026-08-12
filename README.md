@@ -25,9 +25,9 @@ Practice core Windows Server administration and identity management skills by st
 
 <h2>Architecture</h2>
 
-[Admin Workstation] --RDP--> [Azure VM: Windows Server 2022]
+-[Admin Workstation] --RDP--> [Azure VM: Windows Server 2022]
                                      |
-                              AD DS installed
+                              -AD DS installed
                                      |
                         Promoted to Domain Controller
                                      |
