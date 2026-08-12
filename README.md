@@ -6,7 +6,7 @@
 
 <h2>Overview</h2>
 
-Practice core Windows Server administration and identity management skills by standing up a domain controller from scratch — VM provisioning, role installation, AD DS promotion, and post-deployment verification.<br />
+This project documents deploying a Windows Server 2022 virtual machine in Microsoft Azure and promoting it to an Active Directory Domain Controller, simulating an on-premises AD environment in the cloud.<br />
 
 <h2>Objective</h2>
 
