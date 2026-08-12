@@ -9,7 +9,7 @@ Practice core Windows Server administration and identity management skills by st
 
 <h2>Tools and Technologies Used</h2>
 
-- MMicrosoft Azure (Virtual Machines, Resource Groups, Network Security Groups)
+- Microsoft Azure (Virtual Machines, Resource Groups, Network Security Groups)
 - Windows Server 2022 Datacenter
 - Active Directory Domain Services (AD DS)
 - PowerShell
