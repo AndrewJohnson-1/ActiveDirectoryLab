@@ -28,7 +28,7 @@ Practice core Windows Server administration and identity management skills by st
 <img width="1800" height="1240" alt="azure-dc-architecture" src="https://github.com/user-attachments/assets/9ad25682-d5dd-47d3-a48d-3bda74d64812" />
 
 
-<h2>Deployment and Configuration Steps</h2>
+<h2>Provision the Azure VM</h2>
 
 <p>
 </p>
