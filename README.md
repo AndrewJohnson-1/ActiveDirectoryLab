@@ -33,7 +33,8 @@ Practice core Windows Server administration and identity management skills by st
 <p>
 </p>
 <p>
-In this lab we will create two VMs in the same VNET. One will be a Domain Controller, the other will be a Client machine. We will change the DC to a static IP because its offering Active Directory services to the client machine. Client machine will be joined to the domain. We will control the DNS settings on the client machine, the client machine will use the DC as its DNS server. 
+1. Provison the Azure VM
+  Created a Resource Group ('rg-adlab') in the Azure Portal. Deployed a Windows Server 2022 Datacenteer VM. Configured a Network Security Group to allow inbound RDP (3389) from my IP only.
 </p>
 <br />
 
