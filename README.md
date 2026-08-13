@@ -33,7 +33,7 @@ Practice core Windows Server administration and identity management skills by st
 <p>
 </p>
 <p>
-Created a Resource Group ('rg-adlab') in the Azure Portal. Deployed a Windows Server 2022 Datacenteer VM. Configured a Network Security Group to allow inbound RDP (3389) from my IP only.
+Created a Resource Group ('rg-DC01') in the Azure Portal. Deployed a Windows Server 2022 Datacenteer VM. Configured a Network Security Group to allow inbound RDP (3389) from my IP only.
 </p>
 <br />
 
