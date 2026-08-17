@@ -38,7 +38,8 @@ Created a Resource Group ('rg-adds-lab') in the Azure Portal. Deployed a Virtual
 <br />
 
 <p>
-<img src="https://i.imgur.com/d22FHIm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img <img width="1433" height="804" alt="Step 1 Create a Resource Group" src="https://github.com/user-attachments/assets/8105ffe5-934c-4c8e-b7b4-209c9192c1ff" />
+/>
 </p>
 <p>
 DC-1 has to have a static Private IP Address. Client one will connect to DC-1 to ensure connectivity we will try to ping DC-1 from Client-1. At first the ping will not work correctly. We have to enable ICMPv4 on the firewall on DC-1. Now we can ping DC-1 successfully from Client-1
