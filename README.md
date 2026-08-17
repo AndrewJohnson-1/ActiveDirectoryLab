@@ -26,7 +26,7 @@ Practice core Windows Server administration and identity management skills by st
 <h2>Architecture</h2>
 
 <img width="1800" height="1240" alt="azure-dc-architecture" src="https://github.com/user-attachments/assets/9ad25682-d5dd-47d3-a48d-3bda74d64812" />
-
+<img src="https://i.imgur.com/d22FHIm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 <h2>Step-by-Step Walkthrough</h2>
 
