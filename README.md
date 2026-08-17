@@ -38,7 +38,7 @@ Created a Resource Group ('rg-adds-lab') in the Azure Portal. Deployed a Virtual
 <br />
 
 <p>
-<img <img width="1433" height="804" alt="Step 1 Create a Resource Group" src="https://github.com/user-attachments/assets/8105ffe5-934c-4c8e-b7b4-209c9192c1ff" />
+<img width="1433" height="804" alt="Step 1 Create a Resource Group" src="https://github.com/user-attachments/assets/e3516b79-e145-411f-a6dd-026e57d4d769" />
 />
 </p>
 <p>
