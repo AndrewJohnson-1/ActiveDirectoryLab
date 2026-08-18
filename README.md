@@ -26,19 +26,18 @@ Practice core Windows Server administration and identity management skills by st
 <h2>Architecture</h2>
 
 <img width="1800" height="1240" alt="azure-dc-architecture" src="https://github.com/user-attachments/assets/9ad25682-d5dd-47d3-a48d-3bda74d64812" />
-<img src="https://i.imgur.com/d22FHIm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 <h2>Step-by-Step Walkthrough</h2>
 
 <p>
 </p>
 <p>
-Created a Resource Group ('rg-adds-lab') in the Azure Portal. Deployed a Virtual Network ('adds-vnet', 10.0.0.0/16) with a single subnet to host both VMs.
+In this lab we will create two VMs in the same VNET. One will be a Domain Controller, the other will be a Client machine. We will change the DC to a static IP because its offering Active Directory services to the client machine. Client machine will be joined to the domain. We will control the DNS settings on the client machine, the client machine will use the DC as its DNS server.
 </p>
 <br />
 
 <p>
-<img width="1433" height="804" alt="Step 1 Create a Resource Group" src="https://github.com/user-attachments/assets/e3516b79-e145-411f-a6dd-026e57d4d769" />
+<img src="https://i.imgur.com/d22FHIm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 />
 </p>
 <p>
