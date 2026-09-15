@@ -25,3 +25,4 @@ Two virtual machines were built on the same virtual network: **DC01**, promoted 
 | Remote access | RDP (port 3389) |
 
 **Architecture:**
+<img width="1920" height="1759" alt="image" src="https://github.com/user-attachments/assets/a120e895-1ab1-4a09-b939-e6e501fdc9d3" />
