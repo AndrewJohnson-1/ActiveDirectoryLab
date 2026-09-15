@@ -4,11 +4,11 @@
 
 # Active Directory Domain Services Lab — Azure Homelab
 
-This project deploys and configures a Windows Server domain controller in Microsoft Azure to simulate an on-premises Active Directory environment — the exact technology most mid-size and large companies use to manage employee logins, and the single most common thing a help desk technician touches.
+This project builds a Windows Server domain controller in Azure to simulate a real company's Active Directory setup — the technology most mid-size and large companies run their employee logins on, and the thing a help desk technician touches more than anything else.
 
 ## Overview
 
-Two virtual machines were built on the same virtual network: **DC01**, promoted to a domain controller establishing a new Active Directory forest (`corp.andrewlab.local`), and **CL01**, a domain-joined Windows 11 machine representing a regular employee's computer. Beyond the base domain join, the environment was built out with organizational units, a dedicated admin account, several sample employee accounts, and a security group — turning an empty lab into something that behaves like a real company directory.
+Two VMs on the same network: **DC01**, promoted to a domain controller running a new forest, `corp.andrewlab.local`, and **CL01**, a Windows 11 machine joined to that domain the way a regular employee's computer would be. Past the basic join, the directory got organizational units, a dedicated admin account, a handful of sample employee accounts, and a security group — the stuff that separates an empty lab from something that looks like an actual company directory.
 
 ## Environment
 
@@ -28,58 +28,59 @@ Two virtual machines were built on the same virtual network: **DC01**, promoted 
 <img width="1920" height="1759" alt="image" src="https://github.com/user-attachments/assets/a120e895-1ab1-4a09-b939-e6e501fdc9d3" />
 
 
+
 ## Skills Demonstrated
 
 - Windows Server administration and Active Directory Domain Services (AD DS) role installation
-- Promoting a server to a domain controller and establishing a new forest/domain
+- Promoting a server to a domain controller and standing up a new forest/domain
 - DNS configuration in a domain environment, including pointing a virtual network's DNS at a domain controller
-- Static private IP assignment for infrastructure that other systems need to reliably find
+- Static private IP assignment for infrastructure other systems need to find reliably
 - Organizational Unit (OU) design for structuring accounts and computers
-- Security group creation and least-privilege admin account practices (a dedicated `azureadmin` account rather than the built-in Administrator)
+- Security group creation and least-privilege admin practices — a dedicated `azureadmin` account instead of the built-in Administrator
 - Client-to-domain join process and cross-machine authentication (`CORP\username`)
-- Understanding of standard AD DS deployment steps — DSRM recovery password, NetBIOS naming, and the DNS delegation warning that appears in a lab environment
+- Working knowledge of AD DS deployment mechanics: DSRM recovery password, NetBIOS naming, the DNS delegation warning that shows up in a lab environment
 - Azure fundamentals: resource groups, virtual networking, VM provisioning, inbound NSG rules (RDP), cost control
 
 ## Build Process
 
-1. **Provisioned the resource group and virtual network** — Created `rg-adds-lab` and `adds-vnet` to hold and connect everything in this project.
-2. **Created the domain controller VM (DC01)** — Deployed `adds-dc01` (Windows Server 2022 Datacenter: Azure Edition, Standard_B2s) with RDP (3389) allowed inbound.
-3. **Created the client VM (CL01)** — Deployed `adds-cl01` (Windows 11 Pro, Standard_B2s) on the same virtual network, also with RDP (3389) allowed inbound.
-4. **Assigned static private IPs** — Switched both VMs' private IP assignment from Dynamic to Static, since the rest of the network would need to reliably find DC01 by a fixed address.
-5. **Pointed the virtual network's DNS at DC01** — Set `adds-vnet`'s DNS servers to DC01's static private IP so every VM on the network would resolve domain names through it, then restarted both VMs to pick up the change.
-6. **Installed AD DS and promoted DC01 to a domain controller** — Added the Active Directory Domain Services role, then promoted the server to create a new forest, `corp.andrewlab.local` (NetBIOS `CORP`), setting a DSRM recovery password and acknowledging the standard DNS delegation warning along the way.
-7. **Verified the domain controller** — Logged back into DC01 using `CORP\azureadmin`, then confirmed Active Directory Users and Computers and the DNS forward lookup zone were both working correctly.
-8. **Joined CL01 to the domain** — Changed CL01 from a workgroup to the `corp.andrewlab.local` domain using domain administrator credentials, then restarted it.
-9. **Built out the directory structure** — Created two organizational units (`Employees`, `IT`), 5–8 sample employee user accounts (each requiring a password change at first logon), and a security group (`IT-Support`) with members added to it — organizing the directory the way a real IT department would rather than as a flat list.
-10. **Confirmed a new domain user could log in end-to-end** — Signed into CL01 as one of the newly created domain users (`CORP\username`), completed the forced password change, and verified the desktop loaded successfully — proving DNS, AD DS, the domain join, and authentication all worked together.
+1. **Set up the resource group and network.** `rg-adds-lab` and `adds-vnet` — everything else in this project lives inside them.
+2. **Created the domain controller VM.** `adds-dc01` (DC01), Windows Server 2022 Datacenter: Azure Edition, Standard_B2s, RDP open on 3389.
+3. **Created the client VM.** `adds-cl01` (CL01), Windows 11 Pro, Standard_B2s, same network, RDP opened the same way.
+4. **Made both private IPs static.** Switched DC01 and CL01 from Dynamic to Static, since the rest of the network needed a fixed address to point at for DC01 specifically.
+5. **Pointed the network's DNS at DC01.** Set `adds-vnet`'s DNS server to DC01's static IP and restarted both VMs so the change actually took effect.
+6. **Installed AD DS and promoted DC01.** Added the Active Directory Domain Services role, then promoted the server to stand up a new forest, `corp.andrewlab.local` (NetBIOS `CORP`) — set a DSRM recovery password along the way and clicked past the DNS delegation warning, which is expected for a lab like this.
+7. **Checked that it actually worked.** Logged back into DC01 as `CORP\azureadmin`, then confirmed Active Directory Users and Computers and the DNS forward lookup zone were both there.
+8. **Joined CL01 to the domain.** Switched it from a workgroup to `corp.andrewlab.local` using domain admin credentials, then restarted it.
+9. **Built out the directory.** Two OUs (`Employees`, `IT`), 5–8 sample employee accounts each forced to change their password at first logon, and a security group, `IT-Support`, with a couple of those users added to it.
+10. **Logged in as a brand-new domain user.** Signed into CL01 as one of the accounts from step 9, went through the forced password change, and landed on the desktop — proof that DNS, AD DS, the domain join, and authentication were all actually working together, not just installed.
 
 ## What Was Configured
 
-- **Forest/Domain:** `corp.andrewlab.local`, NetBIOS `CORP`, established on DC01
+- **Forest/Domain:** `corp.andrewlab.local`, NetBIOS `CORP`, on DC01
 - **Organizational Units:** `Employees`, `IT`
-- **Security group:** `IT-Support`, with sample users added as members
+- **Security group:** `IT-Support`, with sample users added
 - **Admin account:** `azureadmin`
-- **Sample users:** 5–8 employee accounts created with a forced password change at first logon
-- **Client join:** `CL01` joined to the domain with DNS pointed at DC01
-- **Remote access:** RDP (3389) allowed inbound on both VMs
+- **Sample users:** 5–8 employee accounts, forced password change at first logon
+- **Client join:** `CL01` joined to the domain, DNS pointed at DC01
+- **Remote access:** RDP (3389) open on both VMs
 
 ## Security Notes
 
-- A dedicated `azureadmin` account was used for administration rather than the built-in Administrator account.
-- The DSRM (Directory Services Restore Mode) recovery password was set and stored separately from domain login credentials.
-- New user accounts were created with a forced password change at first logon rather than a reusable static password.
-- RDP (3389) is the only inbound port opened on either VM's network security group.
+- `azureadmin` handled administration instead of the built-in Administrator account.
+- The DSRM recovery password was set and kept separate from domain login credentials.
+- New accounts were forced to change their password at first logon rather than keep a static temporary one.
+- RDP (3389) is the only inbound port open on either VM.
 
 ## Screenshots
 
-_Add screenshots here to round out the portfolio:_
-- Active Directory Users and Computers showing the `Employees`/`IT` OU structure and sample users
-- The `IT-Support` security group and its members
+Screenshots to add:
+- Active Directory Users and Computers showing the `Employees`/`IT` OUs and sample users
+- The `IT-Support` group and its members
 - A successful domain login on CL01 (`CORP\username`)
 
 ## Cleanup
 
-Both VMs were stopped ("Stopped (deallocated)") in the Azure Portal when not actively in use, and the `rg-adds-lab` resource group was deleted once the project was fully documented, to ensure the lab stopped billing entirely.
+Stopped both VMs ("Stopped (deallocated)") in the Azure Portal whenever they weren't in use, then deleted `rg-adds-lab` once the project was documented, so nothing kept racking up charges in the background.
 
 ## Related Projects
 
