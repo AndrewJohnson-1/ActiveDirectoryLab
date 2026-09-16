@@ -17,7 +17,7 @@ Two VMs on the same network: **DC01**, promoted to a domain controller running a
 | Cloud platform | Microsoft Azure |
 | Resource group | `rg-adds-lab` |
 | Virtual network | `adds-vnet` |
-| Domain controller | `DC01` (`adds-dc01`) — Windows Server 2022 Datacenter: Azure Edition, Standard_B2s |
+| Domain controller | `DC01` (`adds-dc01`) — Windows Server 2025 Datacenter: Azure Edition, Standard_D2s |
 | Client machine | `CL01` (`adds-cl01`) — Windows 11 Pro, Standard_B2s |
 | Domain / Forest | `corp.andrewlab.local` (NetBIOS: `CORP`) |
 | Admin account | `azureadmin` |
