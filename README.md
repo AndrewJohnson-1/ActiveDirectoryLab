@@ -86,13 +86,6 @@ Two VMs on the same network: **DC01**, promoted to a domain controller running a
 - New accounts were forced to change their password at first logon rather than keep a static temporary one.
 - RDP (3389) is the only inbound port open on either VM.
 
-## Screenshots
-
-Screenshots to add:
-- Active Directory Users and Computers showing the `Employees`/`IT` OUs and sample users
-- The `IT-Support` group and its members
-- A successful domain login on CL01 (`CORP\username`)
-
 ## Cleanup
 
 Stopped both VMs ("Stopped (deallocated)") in the Azure Portal whenever they weren't in use, then deleted `rg-adds-lab` once the project was documented, so nothing kept racking up charges in the background.
