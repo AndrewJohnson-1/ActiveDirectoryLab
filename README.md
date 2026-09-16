@@ -49,6 +49,7 @@ Two VMs on the same network: **DC01**, promoted to a domain controller running a
 3. **Created the client VM.** `adds-cl01` (CL01), Windows 11 Pro, Standard_B2s, same network, RDP opened the same way.
 4. **Made both private IPs static.** Switched DC01 and CL01 from Dynamic to Static, since the rest of the network needed a fixed address to point at for DC01 specifically.
 <img width="2880" height="1620" alt="image" src="https://github.com/user-attachments/assets/370bcd26-3105-4bfb-9e0c-f2aef3025604" />
+<img width="2880" height="1620" alt="image" src="https://github.com/user-attachments/assets/e862db79-bd12-41ee-b9fd-d68ce01256a0" />
 
 
 5. **Pointed the network's DNS at DC01.** Set `adds-vnet`'s DNS server to DC01's static IP and restarted both VMs so the change actually took effect.
