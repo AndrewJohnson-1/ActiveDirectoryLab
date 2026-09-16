@@ -55,6 +55,8 @@ Two VMs on the same network: **DC01**, promoted to a domain controller running a
 <img width="2880" height="1620" alt="image" src="https://github.com/user-attachments/assets/c106ed7c-c794-4736-87c7-36689200af94" />
 
 6. **Installed AD DS and promoted DC01.** Added the Active Directory Domain Services role, then promoted the server to stand up a new forest, `corp.andrewlab.local` (NetBIOS `CORP`) — set a DSRM recovery password along the way and clicked past the DNS delegation warning, which is expected for a lab like this.
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/070e07c5-3f9a-4cd9-9e4d-b9135ecc44ba" />
+
 7. **Checked that it actually worked.** Logged back into DC01 as `CORP\azureadmin`, then confirmed Active Directory Users and Computers and the DNS forward lookup zone were both there.
 8. **Joined CL01 to the domain.** Switched it from a workgroup to `corp.andrewlab.local` using domain admin credentials, then restarted it.
 9. **Built out the directory.** Two OUs (`Employees`, `IT`), 5–8 sample employee accounts each forced to change their password at first logon, and a security group, `IT-Support`, with a couple of those users added to it.
