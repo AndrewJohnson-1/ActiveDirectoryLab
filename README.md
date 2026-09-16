@@ -45,8 +45,8 @@ Two VMs on the same network: **DC01**, promoted to a domain controller running a
 ## Build Process
 
 1. **Set up the resource group and network.** `rg-adds-lab` and `adds-vnet` — everything else in this project lives inside them.
-2. **Created the domain controller VM.** `adds-dc01` (DC01), Windows Server 2022 Datacenter: Azure Edition, Standard_B2s, RDP open on 3389.
-3. **Created the client VM.** `adds-cl01` (CL01), Windows 11 Pro, Standard_B2s, same network, RDP opened the same way.
+2. **Created the domain controller VM.** `adds-dc01` (DC01), Windows Server 2025 Datacenter: Azure Edition, Standard_D2s, RDP open on 3389.
+3. **Created the client VM.** `adds-cl01` (CL01), Windows 11 Pro, Standard_D2s, same network, RDP opened the same way.
 4. **Made both private IPs static.** Switched DC01 and CL01 from Dynamic to Static, since the rest of the network needed a fixed address to point at for DC01 specifically.
 <img width="2880" height="1620" alt="image" src="https://github.com/user-attachments/assets/370bcd26-3105-4bfb-9e0c-f2aef3025604" />
 <img width="2880" height="1620" alt="image" src="https://github.com/user-attachments/assets/e862db79-bd12-41ee-b9fd-d68ce01256a0" />
