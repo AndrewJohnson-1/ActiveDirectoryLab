@@ -25,7 +25,8 @@ Two VMs on the same network: **DC01**, promoted to a domain controller running a
 | Remote access | RDP (port 3389) |
 
 **Architecture:**
-<img width="1920" height="1759" alt="image" src="https://github.com/user-attachments/assets/a120e895-1ab1-4a09-b939-e6e501fdc9d3" />
+<img width="1920" height="1759" alt="image" src="https://github.com/user-attachments/assets/6709a3c8-8f46-43cb-8037-92af7e39f0cc" />
+
 
 
 
