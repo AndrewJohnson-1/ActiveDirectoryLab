@@ -61,6 +61,8 @@ Two VMs on the same network: **DC01**, promoted to a domain controller running a
 <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/fa632b59-b221-42a5-9829-d80efd533a48" />
 
 8. **Joined CL01 to the domain.** Switched it from a workgroup to `corp.andrewlab.local` using domain admin credentials, then restarted it.
+<img width="2000" height="1250" alt="image" src="https://github.com/user-attachments/assets/88a540a0-4982-4951-a1ec-8fdd92072880" />
+
 9. **Built out the directory.** Two OUs (`Employees`, `IT`), 5–8 sample employee accounts each forced to change their password at first logon, and a security group, `IT-Support`, with a couple of those users added to it.
 10. **Logged in as a brand-new domain user.** Signed into CL01 as one of the accounts from step 9, went through the forced password change, and landed on the desktop — proof that DNS, AD DS, the domain join, and authentication were all actually working together, not just installed.
 
