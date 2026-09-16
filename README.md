@@ -51,8 +51,9 @@ Two VMs on the same network: **DC01**, promoted to a domain controller running a
 <img width="2880" height="1620" alt="image" src="https://github.com/user-attachments/assets/370bcd26-3105-4bfb-9e0c-f2aef3025604" />
 <img width="2880" height="1620" alt="image" src="https://github.com/user-attachments/assets/e862db79-bd12-41ee-b9fd-d68ce01256a0" />
 
-
 5. **Pointed the network's DNS at DC01.** Set `adds-vnet`'s DNS server to DC01's static IP and restarted both VMs so the change actually took effect.
+<img width="2880" height="1620" alt="image" src="https://github.com/user-attachments/assets/c106ed7c-c794-4736-87c7-36689200af94" />
+
 6. **Installed AD DS and promoted DC01.** Added the Active Directory Domain Services role, then promoted the server to stand up a new forest, `corp.andrewlab.local` (NetBIOS `CORP`) — set a DSRM recovery password along the way and clicked past the DNS delegation warning, which is expected for a lab like this.
 7. **Checked that it actually worked.** Logged back into DC01 as `CORP\azureadmin`, then confirmed Active Directory Users and Computers and the DNS forward lookup zone were both there.
 8. **Joined CL01 to the domain.** Switched it from a workgroup to `corp.andrewlab.local` using domain admin credentials, then restarted it.
